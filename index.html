@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Indicator</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="scripts/index.js"></script>
+
+</head>
+
+<body>
+    <div class="main  d-flex justify-content-around">
+        <div class="">
+            <div class="main-content" id="mainContent" #mainContent>
+                <img src="images/logo.png" class="logo">
+                <h1 class="heading">STOCK PRICE INDICATOR</h1>
+                <p class="sub-heading">GET LATEST STOCK PRICE ALERTS + NEWS AT YOUR FINGER TIPS</p>
+                <button onclick="getStarted()" id="getStarted" class="btn btn--white mt-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        Get Started
+                        <img class="btn-icon" src="images/arrow-right-solid.svg">
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div id="loginDialog" class="dialog display-none">
+            <div id="loginForm" class="form-display">
+                <div class="text-center">
+                    <h2 class="login-heading" id="loginRegisterHeading">Login</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="loginPhoneNumber" class="form-label">Phone Number</label>
+                    <div class="form__phone d-flex align-items-center">
+                        <p class="form__phone__countrycode"> +91</p>
+                        <input onkeyup="clearValidationErrors()" type="text" class="form__phone__input"
+                            id="loginPhoneNumber">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input onkeyup="clearValidationErrors()" type="password" class="form-control" id="loginPassword">
+                </div>
+                <div class="text-center mt-4">
+                    <div id="loginErrorMessage" class="error-text mb-2"></div>
+                    <button onclick="loginUser()" class="btn btn-primary w-50">Login</button>
+                    <p class="mt-2">Don't have an account? Create <a onclick="showRegisterForm()"
+                            href="javascript:void(0)">here</a></p>
+                </div>
+            </div>
+
+            <div class="form-display display-none" id="registerForm">
+                <h2 class="login-heading" id="loginRegisterHeading">Register</h2>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" name="fullname" class="form-control" id="fullName">
+                </div>
+                <div class="mb-3">
+                    <label for="registerPhoneNumber" class="form-label">Phone Number</label>
+                    <div class="form__phone d-flex align-items-center">
+                        <p class="form__phone__countrycode"> +91</p>
+                        <input onkeyup="clearValidationErrors()" type="text" class="form__phone__input"
+                            id="registerPhoneNumber">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="registerPassword">
+                </div>
+                <div class="text-center mt-4">
+                    <div id="registerErrorMessage" class="error-text mb-2"></div>
+                    <button onclick="registerUser()" class="btn btn-primary w-50">Sign Up</button>
+                    <p class="mt-2">Already have an account? Login <a onclick="showLoginForm()"
+                            href="javascript:void(0)">here</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="my-2" id="snackbar">Toast Message</div>
+    </div>
+</body>
+
+</html>
