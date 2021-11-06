@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Indicator</title>
+    <link rel="stylesheet" href="styles/stocks.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="scripts/stocks.js"></script>
+</head>
+
+<body>
+    <nav class="navbar d-flex justify-content-between">
+        <img class="logo" src="images/logo.png">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="logoutButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+
+            </button>
+            <div class="dropdown-menu" aria-labelledby="logoutButton">
+                <a onclick="logoutUser()" class="dropdown-item" href="#">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="body-content d-flex justify-content-around">
+        <div style="width: 70%">
+            <div class="w100 search-feild my-3">
+                <form class="flex-container my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 search-input" type="search" id="searchBox"
+                        placeholder="Search With Stock Name ....." aria-label="Search" onkeyup="searchBoxInput()">
+                    <button id="saveChangesButton" onclick="saveSubscriptions()" class="btn btn-primary" disabled>Save
+                        Changes</button>
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped mt-4">
+                    <thead class="text-center">
+                        <tr>
+                            <th>S. No</th>
+                            <th class="text-center" scope="col">Status</th>
+                            <th class="text-center" scope="col">Stock Name</th>
+                            <th class="text-center" scope="col">Stock Symbol</th>
+                            <th class="text-center" scope="col">Industry</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stocksTableBody">
+                        <tr class="text-center">
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="semibold text-center" id="emptyStocksMessage"></div>
+            </div>
+            <div class="d-flex justify-content-end w100 px-2 my-2">
+                <div style="text-align: center">
+                    <nav aria-label="..." id="pagination">
+                        <ul class="pagination">
+                            <li onclick="previousPage()" id="previous_page" class="page-item disabled">
+                                <span class="page-link"> Previous</span>
+                            </li>
+                            <li id="firstBox" class="page-item active"><a class="page-link" id="firstBoxInner"
+                                    href="javascript: void(0)">1</a></li>
+                            <li id="next_page" onclick="nextPage()" class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div id="paginationMessage" class="pagination-message"></div>
+
+                </div>
+            </div>
+
+            <div class="my-2" id="snackbar">Toast Message</div>
+        </div>
+    </div>
+</body>
+
+</html>

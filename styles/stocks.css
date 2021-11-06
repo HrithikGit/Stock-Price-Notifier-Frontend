@@ -1,0 +1,117 @@
+:root{
+    --mint-cream : #F1F7ED;
+    --msu-green : #243E36;
+    --forest-green : #7CA982;
+    --nyanza : #E0EEC6;
+    --gold : #C2A83E;
+    --white: #fff;
+    --black : #212529;
+}
+
+*{
+    padding : 0;
+    margin : 0;
+    font-size : 16px;
+}
+
+.logo{
+    width : 10rem;
+    height : 3rem;
+}
+
+.navbar{
+    background-color: var(--nyanza);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--mint-cream);
+}
+
+.w100{
+    width : 100%;
+}
+
+.search-btn{
+    width : 25% !important;
+}
+.search-input{
+    height : 2.5rem;
+    width : 80% !important;
+}
+
+.pagination-message{
+    font-weight : 600;
+    color : var(--msu-green)
+}
+
+.flex-container{
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.semibold{
+    font-weight: 600;
+}
+
+.dropdown-menu{
+    min-width : 0 !important;
+}
+.dropdown-menu.show{
+    width : 100% !important;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color:var(--forest-green);
+    color: var(--mint-cream);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@media all and (max-width: 500px){
+    .search-btn{
+        width : 30% !important;
+    }
+    .search-input{
+        width : 60% !important;
+    }
+}
+@media all and (max-width: 826px){
+    
+}
