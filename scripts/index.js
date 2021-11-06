@@ -43,7 +43,7 @@ function loginUser(){
                 localStorage.setItem('userName', result.name);
                 window.location.href = "stocks.html";
             }else{
-                alert("Invalid Credentials");
+                addValidationError("Invalid Credentials! Please Check and Try Again");
             }
         });
     }
