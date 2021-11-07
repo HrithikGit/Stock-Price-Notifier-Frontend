@@ -98,6 +98,7 @@ p{
 
 .from__phone__input:focus-visible{
     outline : none !important;
+    width : 100%;
 }
 :focus-visible {
     outline: -webkit-focus-ring-color auto 0px !important;
@@ -143,6 +144,14 @@ p{
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 @-webkit-keyframes fadein {

@@ -11,3 +11,6 @@ The user will also be able to unsubscribe from the stocks by simply unchecking t
 
 
 >Technologies Used : JavaScript + HTML + CSS
+
+
+For Backend Code -> https://github.com/HrithikGit/Stock-Price-Notifier-Backend

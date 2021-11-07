@@ -49,7 +49,7 @@ function loginUser(){
     }
 }
 
-function registerUser(){
+async function registerUser(){
     var phoneNumber  = document.getElementById("registerPhoneNumber").value.trim();
     var name = document.getElementById("fullName").value.trim();
     var password = document.getElementById("registerPassword").value.trim();
@@ -73,7 +73,7 @@ function registerUser(){
         "password" : password
     }
 
-    const registerResponse = post(url+"register", userData);
+    const registerResponse = await post(url+"register", userData);
 
     if(registerResponse["status"]==="error"){
         addValidationError(registerResponse["message"]);
