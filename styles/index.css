@@ -92,6 +92,7 @@ p{
 }
 
 .form__phone__input{
+    width: 100%;
     border : none !important;
     padding : 0 1rem;
 }
